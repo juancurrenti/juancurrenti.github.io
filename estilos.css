@@ -4,3 +4,14 @@ h1 {
 	background-repeat: repeat;
 	padding: 20px;
 }
+p {
+    position: absolute;
+    top: 230px;
+    left: 300px;
+
+}
+ul{
+    position: absolute;
+    top: 250px;
+    left: 300px;
+}
