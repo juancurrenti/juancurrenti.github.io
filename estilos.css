@@ -1,17 +1,17 @@
 h1 {
 	text-align: center;
-	background-image: url('Fondo\ de\ h1.jpg');
-	background-repeat: repeat;
+	/*background-image: url('Fondo\ de\ h1.jpg');
+	background-repeat: repeat;*/
 	padding: 20px;
 }
 p {
     position: absolute;
-    top: 230px;
-    left: 300px;
+    top: 530px;
+    left: 100px;
 
 }
 ul{
     position: absolute;
-    top: 250px;
-    left: 300px;
+    top: 550px;
+    left: 100px;
 }
