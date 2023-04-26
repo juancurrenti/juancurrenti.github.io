@@ -71,11 +71,11 @@ ul {
     left: 30px;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 768px) {
     .right-column {
         position: absolute;
         top: 2%;
-        left: 80%;
+        left: 90%;
         /* Coloca el elemento a la derecha */
         width: 25.6%;
         /* Establece el ancho de la columna */
@@ -88,7 +88,7 @@ ul {
 
     h5 {
         position: absolute;
-        top: 30%;
+        top: 20%;
         left: 50%;
     }
 }
