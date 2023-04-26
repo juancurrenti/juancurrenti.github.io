@@ -70,12 +70,13 @@ ul {
     top: 350px;
     left: 30px;
 }
+
 /*Para celulares*/
 @media screen and (max-width: 768px) {
     .right-column {
         position: absolute;
         top: 2%;
-        left: 10%;
+        left: 100%;
         /* Coloca el elemento a la derecha */
         width: 25.6%;
         /* Establece el ancho de la columna */
@@ -86,9 +87,21 @@ ul {
         /* Color de fondo de la columna */
     }
 
+    h4 {
+        position: absolute;
+        top: -1%;
+        left: 3%;
+    }
+
     h5 {
         position: absolute;
-        top: 80%;
+        top: 70%;
         left: 50%;
+    }
+
+    h6 {
+        position: absolute;
+        top: 20%;
+        left: 30%;
     }
 }
