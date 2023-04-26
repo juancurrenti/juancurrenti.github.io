@@ -12,6 +12,11 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+.contenedor{
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 h1 {
     border-left: 10px solid #FADB58; /* Tamaño y color del borde */
     background-color: #FFFFE0; /* Color de fondo */
@@ -49,4 +54,11 @@ ul{
     position: absolute;
     top: 350px;
     left: 30px;
+}
+@media screen and (max-width: 768px) {
+    h5{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+    }
 }
