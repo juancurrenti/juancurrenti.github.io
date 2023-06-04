@@ -4,11 +4,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CONTACTANOS</title>
+    <link rel="stylesheet" type="text/css" href="estilospag2.css">
+    <link rel="stylesheet" type="text/css" href="estilospag1.css">
+    
 </head>
 <body>
-    <h1>Formulario de contacto</h1>
-	<p>Esta es la página 2.</p>
-	<p><a href="index.html">Volver a la página principal</a></p>
+    <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contacto</h1>
+        <form onsubmit="return validar()">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <br>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" maxlength="200" required></textarea>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <ul id="errores" class="error-list"></ul>
+        <ul id="mensajes" class="message-list"></ul>
+    </div>
+
+    <script>
+        function validar() {
+            var nombre = document.getElementById('nombre').value;
+            var mensaje = document.getElementById('mensaje').value;
+            var email = document.getElementById('email').value;
+
+            var errores = [];
+
+            if (nombre.trim() === '') {
+                errores.push('El campo "Nombre" es obligatorio.');
+                document.getElementById('nombre').classList.add('error');
+            } else {
+                document.getElementById('nombre').classList.remove('error');
+            }
+
+            if (mensaje.trim() === '') {
+                errores.push('El campo "Mensaje" es obligatorio.');
+                document.getElementById('mensaje').classList.add('error');
+            } else {
+                document.getElementById('mensaje').classList.remove('error');
+            }
+
+            if (email.trim() !== '' && !validarEmail(email)) {
+                errores.push('El campo "Email" no es válido.');
+                document.getElementById('email').classList.add('error');
+            } else {
+                document.getElementById('email').classList.remove('error');
+            }
+
+            mostrarErrores(errores);
+
+            if (errores.length === 0) {
+                agregarMensaje(nombre, mensaje, email);
+                limpiarCampos();
+                document.getElementById('nombre').focus();
+            }
+
+            return false;
+        }
+
+        function validarEmail(email) {
+            var regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+            return regex.test(email);
+        }
+
+        function mostrarErrores(errores) {
+            var erroresUl = document.getElementById('errores');
+            erroresUl.innerHTML = '';
+
+            errores.forEach(function(error) {
+                var li = document.createElement('li');
+                li.textContent = error;
+                erroresUl.appendChild(li);
+            });
+        }
+
+        function agregarMensaje(nombre, mensaje, email) {
+            var mensajesUl = document.getElementById('mensajes');
+            var li = document.createElement('li');
+
+            if (email.trim() !== '') {
+                li.textContent = nombre + ' dice "' + mensaje + '". Contacto: ' + email + '.';
+            } else {
+                li.textContent = nombre + ' dice "' + mensaje + '".';
+            }
+
+            mensajesUl.appendChild(li);
+        }
+
+        function limpiarCampos() {
+            document.getElementById('nombre').value = '';
+            document.getElementById('mensaje').value = '';
+            document.getElementById('email').value = '';
+
+            var campos = document.querySelectorAll('input, textarea');
+            campos.forEach(function(campo) {
+                campo.classList.remove('error');
+            });
+        }
+
+        document.getElementById('nombre').focus();
+    </script>
+</body>
+</html>
+
+	
+    <div class="right-column">
+        
+        <ul>
+            <li><a href="index.html">Volver a la página principal</a></li>
+        </ul>
+        <h4><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_5f2kwbj1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player></h4>
+        </div>
 </body>
 </html>

@@ -17,6 +17,63 @@
         </ul>
         <h4><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_5f2kwbj1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player></h4>
+    </div>
+
+
+        <div class="carousel-container">
+            <img class="carousel-image" src="imagenespag1/imagen1.jpg" alt="Imagen 1">
+            <img class="carousel-image" src="imagenespag1/imagen2.jpg" alt="Imagen 2">
+            <img class="carousel-image" src="imagenespag1/imagen5.jpg" alt="Imagen 5">
         </div>
+
+        <div class="information">
+            <h2></h2>
+            <p id="info-content">Una vez que nuestra miel es elaborada procedemos a extraerla de las colmenas<br>
+            para llevarla a la sala de extracion, donde se le realiza un desoperculado a cada cuadro<br>
+            y se introducen en un extractor de miel centrifugo donde se extrae la miel de los panales,<br>
+            se filtra para separar impurezas como cera y otros,<br>
+            luego se la coloca en tambores en donde se la deja decantar<br>
+            para luego ser envasada. 
+            
+            </p>
+        </div>
+
+        <script>
+            var images = [
+                "imagen1.jpg",
+                "imagen2.jpg",
+                "imagen5.jpg"
+            ];
+            var currentIndex = 0;
+            var carouselImages = document.getElementsByClassName("carousel-image");
+            var carouselContainer = document.getElementsByClassName("carousel-container")[0];
+    
+            function showImage(index) {
+                for (var i = 0; i < carouselImages.length; i++) {
+                    carouselImages[i].style.opacity = 0;
+                }
+                carouselImages[index].style.opacity = 1;
+            }
+    
+            function nextImage() {
+                currentIndex++;
+                if (currentIndex >= images.length) {
+                    currentIndex = 0;
+                }
+                showImage(currentIndex);
+            }
+    
+            function previousImage() {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = images.length - 1;
+                }
+                showImage(currentIndex);
+            }
+    
+            carouselContainer.addEventListener("click", nextImage); // Cambiar de imagen al hacer clic en el contenedor
+            showImage(currentIndex); // Mostrar la primera imagen al cargar la página
+            setInterval(nextImage, 3000);
+        </script>
 </body>
 </html>
